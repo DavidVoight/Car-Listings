@@ -1,0 +1,13 @@
+<h1> List of Cars </h1>
+<ul>
+  <% @cars.each do |car| %>
+    <li><%= "#{car.manufacturer.name}" %><br>
+      <%= "Color: #{car.color}" %><br>
+      <%= "Year: #{car.year}" %><br>
+      <%= "Miles: #{car.mileage}" %><br>
+      <%= "Description: #{car.description}" %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to 'Add manufacturer', new_manufacturer_path %></p>
+<p><%= link_to 'Add car', new_car_path %></p>

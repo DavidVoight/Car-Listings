@@ -1,0 +1,8 @@
+<% @manufacturers.each do |m| %>
+  <ul>
+  <%= "#{m.name}, #{m.country}" %>
+  </ul>
+<% end %>
+
+<p><%= link_to 'Add another manufacturer', new_manufacturer_path %></p>
+<p><%= link_to 'Back to Cars', cars_path %></p>
