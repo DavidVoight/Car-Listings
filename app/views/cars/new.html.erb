@@ -10,8 +10,8 @@
 
   <%= form_for @car do |f| %>
 
-    <%= f.label :manufacturer %>
-    <%= f.collection_select(:manufacturer_id, Manufacturer.all, :id, :name, :include_blank => true) %>
+    <%= f.label :manufacturer_id, "Manufacturer" %>
+    <%= f.collection_select(:manufacturer_id, Manufacturer.all, :id, :name) %>
 
     <%= f.label :color %>
     <%= f.text_field :color %>

@@ -16,7 +16,7 @@ feature 'create manufacturers', %Q{
     click_on "Create Manufacturer"
     expect(page).to have_content ("BMW")
     expect(page).to have_content ("Germany")
-    expect(page).to have_content ("Manufacturer Added.")
+    expect(page).to have_content ("Manufacturer saved.")
 
   end
 
@@ -27,7 +27,7 @@ feature 'create manufacturers', %Q{
     fill_in "Name", with: ""
     fill_in "Country", with: ""
 
-    click_on "Add Manufacturer"
+    click_on "Create Manufacturer"
     expect(page).to have_content ("Name can't be blank")
     expect(page).to have_content ("Country can't be blank")
 
@@ -40,7 +40,7 @@ feature 'create manufacturers', %Q{
     fill_in "Name", with: manufacturer.name
     fill_in "Country", with: manufacturer.country
 
-    click_on "Add Manufacturer"
+    click_on "Create Manufacturer"
     expect(page).to have_content ("Name has already been taken")
 
   end

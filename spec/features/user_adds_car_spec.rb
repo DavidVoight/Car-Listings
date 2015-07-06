@@ -10,7 +10,6 @@ feature 'adding cars', %Q{
     manufacturer = FactoryGirl.create(:manufacturer)
 
     visit new_car_path
-
     select manufacturer.name, from: "Manufacturer"
     fill_in "Color", with: "Blue"
     fill_in "Year", with: "2010"
@@ -18,7 +17,7 @@ feature 'adding cars', %Q{
 
     click_on "Add Car"
 
-    expect(page).to have_content ("Car Saved.")
+    expect(page).to have_content ("Car added")
     expect(page).to have_content manufacturer.name
   end
 
@@ -51,6 +50,6 @@ feature 'adding cars', %Q{
 
     click_on "Add Car"
 
-    expect(page).to have_content ("car must be greater than or equal to 1920")
+    expect(page).to have_content ("Year must be greater than or equal to 1920")
   end
 end
